@@ -1,0 +1,5 @@
+@name Self-Updatable Kernel/include/config
+@persist Kernel_Config:table
+
+#[ Config table. ]#
+#[ End of Config. ]#

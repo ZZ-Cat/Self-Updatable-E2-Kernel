@@ -1,0 +1,17 @@
+@name Self-Updatable Kernel/main
+@model
+@persist
+@trigger all
+@autoupdate
+
+#[ Reset Handler. ]#
+if(dupefinished()){ timer("Reset", 10) }
+if(clk("Reset")){ reset() }
+
+#[ Initialize the kernel & user's application. ]#
+if(first()){
+
+    # Stop the kernel from resetting, on the first run.
+    stoptimer("Reset")
+
+}
