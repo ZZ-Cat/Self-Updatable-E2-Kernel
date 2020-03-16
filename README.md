@@ -1,7 +1,7 @@
 ### Self-Updatable-E2-Kernel
  A self updating Expression 2 script for Garrys Mod.
 
- Currently, it's janky & incomplete. Starting with version 0.1.0; this kernel will be tested, debugged & updated as time marches on.
+ Currently, it's janky & incomplete. Starting with version 0.1.0-a0.1.0; this kernel will be tested, debugged & updated as time marches on.
  The idea with this script is, as the name suggests, it will self update a script that is linked to it.
  How this happens is by way of contacting my GitHub server for the latest version of the linked Expression 2 Script (henceforth abbreviated to "E2"),
  downloading the new code, updating the locally saved file(s) & resetting the E2. Thus, running the new code.

@@ -1,5 +1,11 @@
 @name Self-Updatable Kernel/include/config
-@persist Kernel_Config:table
+@persist [Kernel_Config]:table
 
 #[ Config table. ]#
+Kernel_Config["Kernel Author", string] = "Cassie Robinson"
+Kernel_Config["Kernel Name", string] = "Self-Updatable Kernel"
+Kernel_Config["Kernel Version, string"] = "0.1.0-a0.1.0"
+
+Kernel_Config["Run On Tick", string] = "yes"
+Kernel_Config["Auto-Update User App"] = "yes"
 #[ End of Config. ]#
