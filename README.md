@@ -1,4 +1,4 @@
-### Self-Updatable-E2-Kernel
+# Self-Updatable-E2-Kernel
  A self updating Expression 2 script for Garrys Mod.
 
  Currently, it's janky & incomplete. Starting with version 0.1.0-a0.1.0; this kernel will be tested, debugged & updated as time marches on.
@@ -19,11 +19,11 @@
  As new updates to the kernel are released, you will be required to manually update your E2s accordingly until further notice.
  This is not the case with an E2 that is linked to this kernel. The kernel will automatically update that E2 as new updates to that E2 are released.
 
-# Requirements:
+### Requirements:
  [COMING SOON]
 
-# How to obtain & install:
+### How to obtain & install:
  [COMING SOON]
 
-# How to use the kernel with your project:
+### How to use the kernel with your project:
  [COMING SOON]
