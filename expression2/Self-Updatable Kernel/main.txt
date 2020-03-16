@@ -40,3 +40,9 @@ if(first()){
     runOnFile(1)
 
 }
+
+#[ TODO: HTTP & File shit. ]#
+
+#[ Execute application code. ]#
+if(tickClk()){ loop() }
+if(inputClk()){ inputEvent() }
