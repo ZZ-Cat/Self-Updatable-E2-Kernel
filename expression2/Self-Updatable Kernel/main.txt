@@ -15,7 +15,7 @@ if(first()){
     stoptimer("Reset")
 
     # This include is the path to your application.
-    #inlcude "e2shared/myE2script"
+    #inlcude "e2shared/mySelfUpdatableE2/main"
 
     # These includes are vital for the kernel to function.
     #include "self-updatable kernel/include/config"

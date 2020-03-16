@@ -1,0 +1,26 @@
+@name mySelfUpdatableE2/main
+@persist App_Config:table
+
+if(first()){
+
+    App_Config["App Author", string] = "Your name here"
+    App_Config["App Name", string] = "Your project name here"
+    App_Config["App Version, string"] = "0.1.0-a0.1.0"
+
+    function void setup(){
+
+        #[ Write your application's setup code here. ]#
+
+    }
+
+    function void loop(){
+
+        #[ Write your main application's code here. ]#
+    }
+
+    function void inputEvent(){
+
+        #[ Write your application's input events here. ]#
+
+    }
+}
