@@ -14,10 +14,29 @@ if(first()){
     # Stop the kernel from resetting, on the first run.
     stoptimer("Reset")
 
-    # This include is the path to your application.
-    #inlcude "e2shared/mySelfUpdatableE2/main"
+    # This include is the path to your application. THIS file is what the kernel updates, when new code is made available.
+    #include "e2shared/mySelfUpdatableE2/main"
 
     # These includes are vital for the kernel to function.
     #include "self-updatable kernel/include/config"
+
+    APP_RunOnTick_Nbr = Kernel_Config["Run On Tick", string] == "yes" ? 1 : 0
+
+    # Initialize the user's application.
+    setup()
+
+    local AppName_Str = ""
+
+    AppName_Str += App_Config["App Author", string]
+    AppName_Str += "'s\n'"
+    AppName_Str += App_Config["App Name", string]
+    AppName_Str += "\nVersion "
+    AppName_Str += App_Config["App Version", string]
+
+    setName(AppName_Str)
+
+    runOnTick(APP_RunOnTick_Nbr)
+    runOnHTTP(1)
+    runOnFile(1)
 
 }
