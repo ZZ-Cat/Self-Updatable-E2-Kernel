@@ -1,6 +1,6 @@
 @name Self-Updatable Kernel/main
 @model
-@persist
+@persist [APP_RunOnTick_Nbr]:number
 @trigger all
 @autoupdate
 
@@ -13,5 +13,11 @@ if(first()){
 
     # Stop the kernel from resetting, on the first run.
     stoptimer("Reset")
+
+    # This include is the path to your application.
+    #inlcude "e2shared/myE2script"
+
+    # These includes are vital for the kernel to function.
+    #include "self-updatable kernel/include/config"
 
 }
