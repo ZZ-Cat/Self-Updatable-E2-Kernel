@@ -16,6 +16,7 @@ if(first()){
     function void loop(){
 
         #[ Write your main application's code here. ]#
+
     }
 
     function void inputEvent(){
