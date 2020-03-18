@@ -25,9 +25,17 @@ A self updating Expression 2 script for Garrys Mod.
  This is not the case with an E2 that is linked to this kernel. The kernel will automatically update that E2 as new updates to that E2 are released.
 
 ## Requirements:
- [COMING SOON]
+ * [Wiremod](https://bit.ly/2TZ43A0)
 
 ## How to obtain & install:
+ 1. Download this repository, by clicking "Download Zip" under "Clone or Download", & save the zip file in an accessible directory.
+ 2. Extract everything from the zip file.
+ 3. **Backup your files before expediting this step.** Copy the 'expression2' folder to this directory -> 'steamapps/common/GarrysMod/garrysmod/data', & overwrite the existing folder(s) & file(s) with the same name(s).
+ 4. In your Expression 2 Editor, click the "Update" button & everything should be there.
+    - The kernel will be located in the "Self-Updatable Kernel" folder, inside Expression 2's main directory.
+    - The self-updating project file will be located in the "mySelfUpdatableE2" folder, inside Expression 2's "e2shared" folder.
+
+## Quick Start Guide:
  [COMING SOON]
 
 ## How to use the kernel with your project:
