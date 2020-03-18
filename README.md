@@ -25,6 +25,7 @@ A self updating Expression 2 script for Garrys Mod.
  This is not the case with an E2 that is linked to this kernel. The kernel will automatically update that E2 as new updates to that E2 are released.
 
 ## Requirements:
+ * [Garrys Mod](https://bit.ly/33r6TAI)
  * [Wiremod](https://bit.ly/2TZ43A0)
 
 ## How to obtain & install:
