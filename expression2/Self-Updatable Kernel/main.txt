@@ -102,6 +102,8 @@ if(httpClk()){
                 if(SV_Kernel_Author_Str != CFG_Kernel_Author_Str || SV_Kernel_Name_Str != CFG_Kernel_Author_Str){
 
                     # TODO: Invalid name & author handler.
+                    print("[ERROR]: You have altered the origin of this E2's source code, & are in direct violation of its license.")
+                    selfDestruct()
 
                 }
 
