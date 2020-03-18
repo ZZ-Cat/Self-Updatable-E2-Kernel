@@ -4,7 +4,12 @@
 #[ Config table. ]#
 Kernel_Config["Kernel Author", string] = "Cassie Robinson"
 Kernel_Config["Kernel Name", string] = "Self-Updatable Kernel"
-Kernel_Config["Kernel Version", string] = "0.1.0-a0.2.0"
+Kernel_Config["Kernel Version", string] = "0.1.0-a0.2.1"
+
+Kernel_Config["User App Directory", string] = ">e2shared/mySelfUpdatableE2/main.txt"
+
+Kernel_Config["Version Check URL", string] = "https://raw.githubusercontent.com/ZZ-Cat/Self-Updatable-E2-Kernel/Seed/VERSION.txt"
+Kernel_Config["Update Server URL", string] = "https://raw.githubusercontent.com/ZZ-Cat/Self-Updatable-E2-Kernel/Seed/expression2/e2shared/mySelfUpdatableE2/main.txt"
 
 Kernel_Config["Run On Tick", string] = "yes"
 Kernel_Config["Auto-Update User App", string] = "yes"

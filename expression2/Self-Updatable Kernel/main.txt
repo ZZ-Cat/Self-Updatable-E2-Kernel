@@ -1,6 +1,6 @@
 @name Self-Updatable Kernel/main
 @model
-@persist [APP_RunOnTick_Nbr]:number [URL_Str E2Data_Str]:string
+@persist [APP_RunOnTick_Nbr]:number [URL_Str E2Data_Str VC_URL_Str US_URL_Str]:string
 @trigger all
 @autoupdate
 
@@ -19,6 +19,10 @@ if(first()){
 
     # These includes are vital for the kernel to function.
     #include "self-updatable kernel/include/config"
+
+    # Load configs.
+    US_URL_Str = Kernel_Config["Update Server URL", string]
+    VC_URL_Str = Kernel_Config["Version Check URL", string]
 
     APP_RunOnTick_Nbr = Kernel_Config["Run On Tick", string] == "yes" ? 1 : 0
 
@@ -42,7 +46,7 @@ if(first()){
     runOnFile(1)
 
     # Start an HTTP request.
-    URL_Str = "https://raw.githubusercontent.com/ZZ-Cat/Self-Updatable-E2-Kernel/Seed/VERSION.txt"
+    URL_Str = VC_URL_Str
     timer("Request from HTTP", 100)
 
 }
@@ -83,8 +87,8 @@ if(httpClk()){
         # Switch-case deals with the returned HTTP data, according to which URL requested it.
         switch(CallbackURL_Str){
 
-            # Version check server requested HTTP data.
-            case "https://raw.githubusercontent.com/ZZ-Cat/Self-Updatable-E2-Kernel/Seed/VERSION.txt",
+            # Version Check Server requested HTTP data.
+            case VC_URL_Str,
 
                 # DISABLED: Print contents of the HTTP data to the chat.
                #print(Data_Str)
@@ -127,13 +131,14 @@ if(httpClk()){
                 elseif(SV_Updatable_Version_Str != CFG_Updatable_Version_Str){
 
                     # Send an HTTP request to the update server.
-                    URL_Str = "https://raw.githubusercontent.com/ZZ-Cat/Self-Updatable-E2-Kernel/Seed/expression2/e2shared/mySelfUpdatableE2/main.txt"
+                    URL_Str = US_URL_Str
                     timer("Request from HTTP", 100)
 
                 }
                 break
 
-            case "https://raw.githubusercontent.com/ZZ-Cat/Self-Updatable-E2-Kernel/Seed/expression2/e2shared/mySelfUpdatableE2/main.txt",
+            # Update Server requested HTTP Data.
+            case US_URL_Str,
 
                 # Print the contents of the updated file to the chat, for now.
                 E2Data_Str = Data_Str
