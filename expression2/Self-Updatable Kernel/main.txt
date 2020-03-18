@@ -77,22 +77,58 @@ if(httpClk()){
     local CallbackURL_Str = httpRequestUrl()
     local Data_Str = httpData()
 
-    # Switch-case deals with the returned HTTP data, according to which URL requested it.
-    switch(CallbackURL_Str){
+    # Expedite version checking & automatic updates, only when data is present in the HTTP Data String.
+    if(Data_Str != ""){
 
-        # Version check server requested HTTP data.
-        case "https://raw.githubusercontent.com/ZZ-Cat/Self-Updatable-E2-Kernel/Seed/VERSION.txt",
+        # Switch-case deals with the returned HTTP data, according to which URL requested it.
+        switch(CallbackURL_Str){
 
-            # Print contents of the HTTP data to the chat.
-            print(Data_Str)
-            break
+            # Version check server requested HTTP data.
+            case "https://raw.githubusercontent.com/ZZ-Cat/Self-Updatable-E2-Kernel/Seed/VERSION.txt",
 
-        # Non-declared URL requested HTTP data.
-        default,
+                # DISABLED: Print contents of the HTTP data to the chat.
+               #print(Data_Str)
 
-            # This is an error, as it is not a part of the self-updating process.
-            print("[ERROR]: An invalid URL tried to request HTTP data.")
-            break
+                local Lines_Ary = Data_Str:explode("\n")
+                local SV_Kernel_Author_Str = Lines_Ary[1, string]:explode("Author: ")[2, string]
+                local SV_Kernel_Name_Str = Lines_Ary[2, string]:explode("Name: ")[2, string]
+                local SV_Kernel_Version_Str = Lines_Ary[3, string]:explode("Version: ")[2, string]
+
+                local CFG_Kernel_Author_Str = Kernel_Config["Kernel Author", string]
+                local CFG_Kernel_Name_Str = Kernel_Config["Kernel Name", string]
+                local CFG_Kernel_Version_Str = Kernel_Config["Kernel Version", string]
+
+                # Invalid author's & E2's name handler.
+                if(SV_Kernel_Author_Str != CFG_Kernel_Author_Str || SV_Kernel_Name_Str != CFG_Kernel_Author_Str){
+
+                    # TODO: Invalid name & author handler.
+
+                }
+
+                # What to do, when a new version of the kernel is available.
+                elseif(SV_Kernel_Version_Str != CFG_Kernel_Version_Str){
+
+                    # Print a rudimentary message to the chat.
+                    print("[NOTICE]: A new version is available.")
+
+                }
+                break
+
+            # Non-declared URL requested HTTP data.
+            default,
+
+                # This is an error, as it is not a part of the self-updating process.
+                print("[ERROR]: An invalid URL tried to request HTTP data.")
+                break
+
+        }
+    }
+
+    # When no data is present in the HTTP Data Buffer, this is an error.
+    else{
+
+        # Print an error to the chat.
+        print("[ERROR]: No data is present in HTTP Data Buffer.")
 
     }
 }
