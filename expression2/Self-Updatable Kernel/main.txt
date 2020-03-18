@@ -1,6 +1,6 @@
 @name Self-Updatable Kernel/main
 @model
-@persist [APP_RunOnTick_Nbr]:number
+@persist [APP_RunOnTick_Nbr]:number [URL_Str]:string
 @trigger all
 @autoupdate
 
@@ -25,23 +25,77 @@ if(first()){
     # Initialize the user's application.
     setup()
 
+    # Set the name of the user's application. NB: This will appear in the E2's popup window, when you look at the E2 chip in-game.
     local AppName_Str = ""
 
     AppName_Str += App_Config["App Author", string]
-    AppName_Str += "'s\n'"
+    AppName_Str += "'s\n"
     AppName_Str += App_Config["App Name", string]
     AppName_Str += "\nVersion "
     AppName_Str += App_Config["App Version", string]
 
     setName(AppName_Str)
 
+    # Set execution triggers.
     runOnTick(APP_RunOnTick_Nbr)
     runOnHTTP(1)
     runOnFile(1)
 
+    # Start an HTTP request.
+    URL_Str = "https://raw.githubusercontent.com/ZZ-Cat/Self-Updatable-E2-Kernel/Seed/VERSION.txt"
+    timer("Request from HTTP", 100)
+
 }
 
 #[ TODO: HTTP & File shit. ]#
+
+#[ Automatic HTTP Request Handler. ]#
+if(clk("Request from HTTP")){
+
+    # Cancel the automatic request timer.
+    stoptimer("Request from HTTP")
+
+    if(httpCanRequest()){
+
+        # Request data from the specified URL.
+        httpRequest(URL_Str)
+
+    }
+
+    else{
+
+        # Reset the automatic request timer.
+        timer("Request from HTTP", 3000)
+
+    }
+}
+
+#[ HTTP Callback Handler. ]#
+if(httpClk()){
+
+    # Local variables store relevant URL & HTTP data.
+    local CallbackURL_Str = httpRequestURL()
+    local Data_Str = httpData()
+
+    # Switch-case deals with the returned HTTP data, according to which URL requested it.
+    switch(CallbackURL_Str){
+
+        # Version check server requested HTTP data.
+        case "https://raw.githubusercontent.com/ZZ-Cat/Self-Updatable-E2-Kernel/Seed/VERSION.txt",
+
+            # Print contents of the HTTP data to the chat.
+            print(Data_Str)
+            break
+
+        # Non-declared URL requested HTTP data.
+        default,
+
+            # This is an error, as it is not a part of the self-updating process.
+            print("[ERROR]: An invalid URL tried to request HTTP data.")
+            break
+
+    }
+}
 
 #[ Execute application code. ]#
 if(tickClk()){ loop() }
