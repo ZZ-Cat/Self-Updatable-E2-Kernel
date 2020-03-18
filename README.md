@@ -1,4 +1,4 @@
-# Self Updatable E2 Kernel [![Build Status](https://travis-ci.com/ZZ-Cat/Self-Updatable-E2-Kernel.svg?branch=Seed)](https://travis-ci.com/github/ZZ-Cat/Self-Updatable-E2-Kernel)
+# Self Updatable E2 Kernel
 A self updating Expression 2 script for Garrys Mod.
 
 ### Written & Developed by:
