@@ -1,6 +1,6 @@
 @name Self-Updatable Kernel/main
 @model
-@persist [APP_RunOnTick_Nbr]:number [URL_Str]:string
+@persist [APP_RunOnTick_Nbr]:number [URL_Str E2Data_Str]:string
 @trigger all
 @autoupdate
 
@@ -94,14 +94,22 @@ if(httpClk()){
                 local SV_Kernel_Name_Str = Lines_Ary[2, string]:explode("Name: ")[2, string]
                 local SV_Kernel_Version_Str = Lines_Ary[3, string]:explode("Version: ")[2, string]
 
+                local SV_Updatable_Author_Str = Lines_Ary[5, string]:explode("Author: ")[2, string]
+                local SV_Updatable_Name_Str = Lines_Ary[6, string]:explode("Name: ")[2, string]
+                local SV_Updatable_Version_Str = Lines_Ary[7, string]:explode("Version: ")[2, string]
+
                 local CFG_Kernel_Author_Str = Kernel_Config["Kernel Author", string]
                 local CFG_Kernel_Name_Str = Kernel_Config["Kernel Name", string]
                 local CFG_Kernel_Version_Str = Kernel_Config["Kernel Version", string]
 
+                local CFG_Updatable_Author_Str = App_Config["App Author", string]
+                local CFG_Updatable_Name_Str = App_Config["App Name", string]
+                local CFG_Updatable_Version_Str = App_Config["App Version", string]
+
                 # Invalid author's & E2's name handler.
                 if(SV_Kernel_Author_Str != CFG_Kernel_Author_Str || SV_Kernel_Name_Str != CFG_Kernel_Name_Str){
 
-                    # TODO: Invalid name & author handler.
+                    # Invalid name & author handler.
                     print("[ERROR]: You have altered the origin of this E2's source code, & are in direct violation of its license.")
                     selfDestruct()
 
@@ -114,6 +122,22 @@ if(httpClk()){
                     print("[NOTICE]: A new version is available.")
 
                 }
+
+                # What to do, when a new version of the linked file is available.
+                elseif(SV_Updatable_Version_Str != CFG_Updatable_Version_Str){
+
+                    # Send an HTTP request to the update server.
+                    URL_Str = "https://raw.githubusercontent.com/ZZ-Cat/Self-Updatable-E2-Kernel/Seed/expression2/e2shared/mySelfUpdatableE2/main.txt"
+                    timer("Request from HTTP", 100)
+
+                }
+                break
+
+            case "https://raw.githubusercontent.com/ZZ-Cat/Self-Updatable-E2-Kernel/Seed/expression2/e2shared/mySelfUpdatableE2/main.txt",
+
+                # Print the contents of the updated file to the chat, for now.
+                E2Data_Str = Data_Str
+                print(E2Data_Str)
                 break
 
             # Non-declared URL requested HTTP data.
