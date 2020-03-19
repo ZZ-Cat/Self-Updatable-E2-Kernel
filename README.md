@@ -68,3 +68,5 @@ This software is free software; & I welcome your contributions & ideas for this 
 
 ## Software License:
 ![GNU Affero GPL v3](https://www.gnu.org/graphics/agplv3-with-text-162x68.png)
+
+Self Updatable E2 Kernel. Copyright © 2020, Cassandra "ZZ Cat" Robinson.
