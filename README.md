@@ -1,8 +1,6 @@
 # Self Updatable E2 Kernel
-![GNU Affero GPL v3](https://www.gnu.org/graphics/agplv3-with-text-162x68.png)
 
-
-![DRM Free](https://static.fsf.org/dbd/label/DRM-free%20label%20120.en.png)
+![DRM Free](https://static.fsf.org/dbd/label/DRM-free%20label%20120.en.png) Keep it that way.
 
 
 ### Written & Developed by:
@@ -63,3 +61,6 @@ Before you go gung ho, with spawning E2s all willy-nilly, **read & follow these 
 
 ## Contributing to this Software:
 This software is free software; & I welcome your contributions & ideas for this Expression 2 kernel. If you are a developer & would like to contribute to this software's development, consider forking this software, adding in your work & submitting a pull request. Just bare with me, as I am not always around the internet to respond to everyone's requests straight away.
+
+## Software License:
+![GNU Affero GPL v3](https://www.gnu.org/graphics/agplv3-with-text-162x68.png)
