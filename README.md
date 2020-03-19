@@ -1,6 +1,7 @@
 # Self Updatable E2 Kernel
 
-![DRM Free](https://static.fsf.org/dbd/label/DRM-free%20label%20120.en.png) Keep it that way.
+![DRM Free](https://static.fsf.org/dbd/label/DRM-free%20label%20120.en.png)
+[Keep it that way](https://www.defectivebydesign.org/what_is_drm_digital_restrictions_management)
 
 
 ### Written & Developed by:
