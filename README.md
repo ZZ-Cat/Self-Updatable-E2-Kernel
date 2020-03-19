@@ -1,10 +1,11 @@
 # Self Updatable E2 Kernel
 A self updating Expression 2 script for Garrys Mod.
-![GNU Affero GPL v3](https://www.gnu.org/graphics/agplv3-with-text-162x68.png)
 
 ### Written & Developed by:
 [![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/0)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/0)[![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/1)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/1)[![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/2)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/2)[![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/3)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/3)[![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/4)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/4)[![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/5)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/5)[![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/6)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/6)[![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/7)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/7)
 
+### License:
+![GNU Affero GPL v3](https://www.gnu.org/graphics/agplv3-with-text-162x68.png)
 
 ## Description:
  Currently, it's janky & incomplete. Starting with version 0.1.0-a0.1.0; this kernel will be tested, debugged & updated as time marches on.
