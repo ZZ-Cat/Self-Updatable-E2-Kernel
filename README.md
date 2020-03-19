@@ -1,11 +1,14 @@
 # Self Updatable E2 Kernel
 
 ![DRM Free](https://static.fsf.org/dbd/label/DRM-free%20label%20120.en.png)
+
 [Keep it that way](https://www.defectivebydesign.org/what_is_drm_digital_restrictions_management)
+
 
 
 ### Written & Developed by:
 [![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/0)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/0)[![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/1)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/1)[![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/2)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/2)[![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/3)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/3)[![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/4)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/4)[![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/5)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/5)[![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/6)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/6)[![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/7)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/7)
+
 
 
 ## Description:
