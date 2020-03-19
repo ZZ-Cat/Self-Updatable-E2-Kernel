@@ -22,6 +22,7 @@ if(first()){
 
     # Load configs.
     APP_RunOnTick_Nbr = Kernel_Config["Run On Tick", string] == "yes" ? 1 : 0
+    App_Directory_Str = Kernel_Config["User App Directory", string]
     US_URL_Str = Kernel_Config["Update Server URL", string]
     VC_URL_Str = Kernel_Config["Version Check URL", string]
 
@@ -37,6 +38,7 @@ if(first()){
     AppName_Str += "\nVersion "
     AppName_Str += App_Config["App Version", string]
 
+    print(AppName_Str)
     setName(AppName_Str)
 
     # Set execution triggers.
@@ -49,8 +51,6 @@ if(first()){
     timer("Request from HTTP", 100)
 
 }
-
-#[ TODO: HTTP & File shit. ]#
 
 #[ Automatic HTTP Request Handler. ]#
 if(clk("Request from HTTP")){
