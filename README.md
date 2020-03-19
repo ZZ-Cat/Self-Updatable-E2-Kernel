@@ -1,6 +1,6 @@
 # Self Updatable E2 Kernel
-![DRM Free](https://static.fsf.org/dbd/label/DRM-free%20label%20120.en.png)
 ![GNU Affero GPL v3](https://www.gnu.org/graphics/agplv3-with-text-162x68.png)
+![DRM Free](https://static.fsf.org/dbd/label/DRM-free%20label%20120.en.png)
 
 
 ### Written & Developed by:
