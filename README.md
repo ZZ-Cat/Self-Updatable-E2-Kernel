@@ -24,6 +24,8 @@ A self updating Expression 2 script for Garrys Mod.
  As new updates to the kernel are released, you will be required to manually update your E2s accordingly until further notice.
  This is not the case with an E2 that is linked to this kernel. The kernel will automatically update that E2 as new updates to that E2 are released.
 
+ For a list of known bugs, temporary workarounds & what's being done to quash those bugs, view the [errata](https://github.com/ZZ-Cat/Self-Updatable-E2-Kernel/blob/Seed/ERRATA.md) for details.
+
 ## Requirements:
  * [Garrys Mod](https://bit.ly/33r6TAI)
  * [Wiremod](https://bit.ly/2TZ43A0)
