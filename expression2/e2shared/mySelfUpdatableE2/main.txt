@@ -5,11 +5,12 @@ if(first()){
 
     App_Config["App Author", string] = "Your name here"
     App_Config["App Name", string] = "Your project name here"
-    App_Config["App Version", string] = "0.1.0-a0.1.0"
+    App_Config["App Version", string] = "0.1.0-a0.2.0"
 
     function void setup(){
 
         #[ Write your application's setup code here. ]#
+        print("Hello, world.")
 
     }
 

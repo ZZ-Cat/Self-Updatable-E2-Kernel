@@ -4,4 +4,4 @@ Version: 0.1.0-a0.3.0
 
 Author: Cassie Robinson
 Name: Self-Updatable E2
-Version: 0.1.0-a0.1.0
+Version: 0.1.0-a0.2.0
