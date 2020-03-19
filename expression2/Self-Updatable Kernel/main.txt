@@ -1,6 +1,6 @@
 @name Self-Updatable Kernel/main
 @model
-@persist [APP_RunOnTick_Nbr]:number [URL_Str E2Data_Str VC_URL_Str US_URL_Str]:string
+@persist [APP_RunOnTick_Nbr]:number [URL_Str DIR_Str E2Data_Str VC_URL_Str US_URL_Str App_Directory_Str]:string
 @trigger all
 @autoupdate
 
@@ -21,10 +21,9 @@ if(first()){
     #include "self-updatable kernel/include/config"
 
     # Load configs.
+    APP_RunOnTick_Nbr = Kernel_Config["Run On Tick", string] == "yes" ? 1 : 0
     US_URL_Str = Kernel_Config["Update Server URL", string]
     VC_URL_Str = Kernel_Config["Version Check URL", string]
-
-    APP_RunOnTick_Nbr = Kernel_Config["Run On Tick", string] == "yes" ? 1 : 0
 
     # Initialize the user's application.
     setup()
@@ -90,9 +89,6 @@ if(httpClk()){
             # Version Check Server requested HTTP data.
             case VC_URL_Str,
 
-                # DISABLED: Print contents of the HTTP data to the chat.
-               #print(Data_Str)
-
                 local Lines_Ary = Data_Str:explode("\n")
                 local SV_Kernel_Author_Str = Lines_Ary[1, string]:explode("Author: ")[2, string]
                 local SV_Kernel_Name_Str = Lines_Ary[2, string]:explode("Name: ")[2, string]
@@ -140,9 +136,10 @@ if(httpClk()){
             # Update Server requested HTTP Data.
             case US_URL_Str,
 
-                # Print the contents of the updated file to the chat, for now.
+                # Download new code from the update server & start a call to opening up the local file.
                 E2Data_Str = Data_Str
-                print(E2Data_Str)
+                DIR_Str = App_Directory_Str
+                timer("Load File", 500)
                 break
 
             # Non-declared URL requested HTTP data.
@@ -160,6 +157,60 @@ if(httpClk()){
 
         # Print an error to the chat.
         print("[ERROR]: No data is present in HTTP Data Buffer.")
+
+    }
+}
+
+#[ File Load Handler. ]#
+if(clk("Load File")){
+
+    stoptimer("Load File")
+
+    if(fileCanLoad()){
+
+        fileLoad(DIR_Str)
+
+    }
+
+    else{
+
+        timer("Load File", 10000)
+
+    }
+}
+
+#[ User App File Uploaded Callback Handler. ]#
+if(fileClk(App_Directory_Str)){
+
+    switch(fileStatus()){
+
+        case _FILE_OK,
+            print("[NOTICE]: User app successfully uploaded. Automatic update is now in progress...")
+            timer("Update User App", 200)
+            break
+
+        default,
+            print("[ERROR]: Failed to load user app.")
+            break
+
+    }
+}
+
+if(clk("Update User App")){
+
+    stoptimer("Update User App")
+
+    if(fileCanWrite()){
+
+        fileWrite(App_Directory_Str, E2Data_Str)
+        print("[NOTICE]: User App has been updated. E2 will now restart.")
+        timer("Reset", 5000)
+
+    }
+
+    else{
+
+        timer("Update User App", 200)
 
     }
 }
