@@ -53,8 +53,8 @@
 ## Quick Start Guide:
 Before you go gung ho, with spawning E2s all willy-nilly, **read & follow these instructions accordingly.**
  1. Open up Garrys Mod's Expression 2 Editor & navigate to the 'main.txt' file, that's located within the 'mySelfUpdatableE2' folder, in your 'e2shared' folder.
- 2. For a quick "proof of concept" demonstration, highlight the version numbers on line 8 9 roll the current version backward by a number of your choosing.
- 3. Comment out the "Hello World" chat print function on line 14.
+ 2. For a quick "proof of concept" demonstration, highlight the version numbers on line 31 & roll the current version backward by a number of your choosing.
+ 3. Comment out the "Hello World" chat print function on line 36.
  3. Hit 'Ctrl + S' to save the file. Close the file, once you have done this.
  4. Navigate to the 'main.txt' file in the 'Self-Updatable Kernel' folder, located in the main 'expression2' directory, & open it.
  5. Close the editor & spawn the 'Self-Updatable Kernel' in a location of your choosing in-game.
