@@ -4,7 +4,7 @@
 #[ Config table. ]#
 Kernel_Config["Kernel Author", string] = "Cassie Robinson"
 Kernel_Config["Kernel Name", string] = "Self-Updatable Kernel"
-Kernel_Config["Kernel Version", string] = "1.2.0"
+Kernel_Config["Kernel Version", string] = "1.2.1"
 
 Kernel_Config["User App Directory", string] = ">e2shared/mySelfUpdatableE2/main.txt"
 

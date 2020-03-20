@@ -148,7 +148,6 @@ if(httpClk()){
 
                     # Invalid name & author handler.
                     printColor(vec(255, 0, 0), "[ERROR]", vec(255), ": You have altered the origin of this E2's source code, & are in direct violation of its license.")
-                   #print("[ERROR]: You have altered the origin of this E2's source code, & are in direct violation of its license.")
                     selfDestruct()
 
                 }
@@ -158,7 +157,6 @@ if(httpClk()){
 
                     # Print a rudimentary message to the chat.
                     printColor(vec(0, 100, 200), "[NOTICE]", vec(255), ": A new version of this E2 is available at: ", vec(0, 0, 255), "https://bit.ly/SelfUpdatableE2_Update")
-                   #print("[NOTICE]: A new version of this E2 is available at: https://bit.ly/SelfUpdatableE2_Update")
 
                 }
 
@@ -178,7 +176,6 @@ if(httpClk()){
 
                         # Print a notification to the chat.
                         printColor(vec(0, 100, 200), "[NOTICE]", vec(255), ": A new version of the User App is available. Enable automatic updates in the Config to download it.")
-                       #print("[NOTICE]: A new version of the User App is available. Enable automatic updates in the Config to download it.")
 
                     }
                 }
@@ -198,7 +195,6 @@ if(httpClk()){
 
                 # This is an error, as it is not a part of the self-updating process.
                 printColor(vec(255, 0, 0), "[ERROR]", vec(255), ": An invalid URL tried to request HTTP data.")
-               #print("[ERROR]: An invalid URL tried to request HTTP data.")
                 break
 
         }
@@ -209,7 +205,6 @@ if(httpClk()){
 
         # Print an error to the chat.
         printColor(vec(255, 0, 0), "[ERROR]", vec(255), ": No data is present in HTTP Data Buffer.")
-       #print("[ERROR]: No data is present in HTTP Data Buffer.")
 
     }
 }
@@ -243,17 +238,14 @@ if(fileClk(App_Directory_Str)){
 
         case _FILE_404,
             printColor(vec(255, 0, 0), "[ERROR]", vec(255), ": No User App was found.")
-           #print("[ERROR]: No User App was found.")
             break
 
         case _FILE_UNKNOWN,
             printColor(vec(255, 0, 0), "[ERROR]", vec(255), ": Invalid User App extension. User App needs to be ", vec(0, 0, 255), "'*.txt'", vec(255), ".")
-           #print("[ERROR]: Invalid User App file extension. User App needs to be '*.txt'")
             break
 
         default,
             printColor(vec(255, 0, 0), "[ERROR]", vec(255), ": Failed to update User App.")
-            print("[ERROR]: Failed to update User App.")
             break
 
     }
@@ -266,9 +258,8 @@ if(clk("Update User App")){
     if(fileCanWrite()){
 
         fileWrite(DIR_Str, E2Data_Str)
-        setName("E2 is waiting to be reloaded.")
+        setName("Zap me with the Expression 2 Tool.")
         printColor(vec(0, 255, 0), "[INFO]", vec(255), ": Successfully updated User App. It is now safe to reload the E2.")
-       #print("[NOTICE]: Successfully updated User App. It is now safe to reload the E2.")
         runOnTick(0)
         exit()
 
