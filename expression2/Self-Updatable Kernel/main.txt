@@ -140,7 +140,7 @@ if(httpClk()){
                 elseif(SV_Kernel_Version_Str != CFG_Kernel_Version_Str){
 
                     # Print a rudimentary message to the chat.
-                    print("[NOTICE]: A new version is available.")
+                    print("[NOTICE]: A new version of this E2 is available at: https://bit.ly/SelfUpdatableE2_Update")
 
                 }
 
