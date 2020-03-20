@@ -147,7 +147,8 @@ if(httpClk()){
                 if(SV_Kernel_Author_Str != CFG_Kernel_Author_Str || SV_Kernel_Name_Str != CFG_Kernel_Name_Str){
 
                     # Invalid name & author handler.
-                    print("[ERROR]: You have altered the origin of this E2's source code, & are in direct violation of its license.")
+                    printColor(vec(255, 0, 0), "[ERROR]", vec(255), ": You have altered the origin of this E2's source code, & are in direct violation of its license.")
+                   #print("[ERROR]: You have altered the origin of this E2's source code, & are in direct violation of its license.")
                     selfDestruct()
 
                 }
@@ -156,7 +157,8 @@ if(httpClk()){
                 elseif(SV_Kernel_Version_Str != CFG_Kernel_Version_Str){
 
                     # Print a rudimentary message to the chat.
-                    print("[NOTICE]: A new version of this E2 is available at: https://bit.ly/SelfUpdatableE2_Update")
+                    printColor(vec(0, 100, 200), "[NOTICE]", vec(255), ": A new version of this E2 is available at: ", vec(0, 0, 255), "https://bit.ly/SelfUpdatableE2_Update")
+                   #print("[NOTICE]: A new version of this E2 is available at: https://bit.ly/SelfUpdatableE2_Update")
 
                 }
 
@@ -175,7 +177,8 @@ if(httpClk()){
                     else{
 
                         # Print a notification to the chat.
-                        print("[NOTICE]: A new version of the User App is available. Enable automatic updates in the Config to download it.")
+                        printColor(vec(0, 100, 200), "[NOTICE]", vec(255), ": A new version of the User App is available. Enable automatic updates in the Config to download it.")
+                       #print("[NOTICE]: A new version of the User App is available. Enable automatic updates in the Config to download it.")
 
                     }
                 }
@@ -194,7 +197,8 @@ if(httpClk()){
             default,
 
                 # This is an error, as it is not a part of the self-updating process.
-                print("[ERROR]: An invalid URL tried to request HTTP data.")
+                printColor(vec(255, 0, 0), "[ERROR]", vec(255), ": An invalid URL tried to request HTTP data.")
+               #print("[ERROR]: An invalid URL tried to request HTTP data.")
                 break
 
         }
@@ -204,7 +208,8 @@ if(httpClk()){
     else{
 
         # Print an error to the chat.
-        print("[ERROR]: No data is present in HTTP Data Buffer.")
+        printColor(vec(255, 0, 0), "[ERROR]", vec(255), ": No data is present in HTTP Data Buffer.")
+       #print("[ERROR]: No data is present in HTTP Data Buffer.")
 
     }
 }
@@ -233,19 +238,21 @@ if(fileClk(App_Directory_Str)){
     switch(fileStatus()){
 
         case _FILE_OK,
-           #print("[NOTICE]: Updating User App...")
             timer("Update User App", 200)
             break
 
         case _FILE_404,
-            print("[ERROR]: No User App was found.")
+            printColor(vec(255, 0, 0), "[ERROR]", vec(255), ": No User App was found.")
+           #print("[ERROR]: No User App was found.")
             break
 
         case _FILE_UNKNOWN,
-            print("[ERROR]: Invalid User App file extension. User App needs to be '*.txt'")
+            printColor(vec(255, 0, 0), "[ERROR]", vec(255), ": Invalid User App extension. User App needs to be ", vec(0, 0, 255), "'*.txt'", vec(255), ".")
+           #print("[ERROR]: Invalid User App file extension. User App needs to be '*.txt'")
             break
 
         default,
+            printColor(vec(255, 0, 0), "[ERROR]", vec(255), ": Failed to update User App.")
             print("[ERROR]: Failed to update User App.")
             break
 
@@ -259,8 +266,11 @@ if(clk("Update User App")){
     if(fileCanWrite()){
 
         fileWrite(DIR_Str, E2Data_Str)
-        print("[NOTICE]: Successfully updated User App. It is now safe to reload the E2.")
-       #timer("Reset", 5000)
+        setName("E2 is waiting to be reloaded.")
+        printColor(vec(0, 255, 0), "[INFO]", vec(255), ": Successfully updated User App. It is now safe to reload the E2.")
+       #print("[NOTICE]: Successfully updated User App. It is now safe to reload the E2.")
+        runOnTick(0)
+        exit()
 
     }
 
