@@ -22,15 +22,30 @@
 
 @name Self-Updatable Kernel/main
 @model
-@persist [APP_RunOnTick_Nbr]:number [URL_Str DIR_Str E2Data_Str VC_URL_Str US_URL_Str App_Directory_Str]:string
+@persist [APP_RunOnTick_Nbr APP_AutoUpdate_Nbr ResetOnDupefinished_Delay_Nbr]:number [URL_Str DIR_Str E2Data_Str VC_URL_Str US_URL_Str App_Directory_Str]:string
 @trigger all
 @autoupdate
 
 #[ Reset Handler. ]#
-if(dupefinished()){ timer("Reset", (realtime() - curtime())) }
-if(clk("Reset")){ reset() }
+if(dupefinished()){
 
-#[ Initialize the kernel & user's application. ]#
+    # This number can be adjusted upward, as a temporary workaround to a bug that cropped up in version 1.0.0. See the errata for further details.
+    ResetOnDupefinished_Delay_Nbr = 0
+
+    # Reset on Dupefinished delay, based on server lag & a pre-adjusted number.
+    timer("Reset", (realtime() - curtime()) + ResetOnDupefinished_Delay_Nbr)
+
+}
+
+if(clk("Reset")){
+
+    # Reset the E2.
+    stoptimer("Reset")
+    reset()
+
+}
+
+#[ Initialize the E2 & User App. ]#
 if(first()){
 
     # Stop the kernel from resetting, on the first run.
@@ -44,6 +59,7 @@ if(first()){
 
     # Load configs.
     APP_RunOnTick_Nbr = Kernel_Config["Run On Tick", string] == "yes" ? 1 : 0
+    APP_AutoUpdate_Nbr = Kernel_Config["Auto-Update User App", string] == "yes" ? 1 : 0
     App_Directory_Str = Kernel_Config["User App Directory", string]
     US_URL_Str = Kernel_Config["Update Server URL", string]
     VC_URL_Str = Kernel_Config["Version Check URL", string]
@@ -147,17 +163,28 @@ if(httpClk()){
                 # What to do, when a new version of the linked file is available.
                 elseif(SV_Updatable_Version_Str != CFG_Updatable_Version_Str){
 
-                    # Send an HTTP request to the update server.
-                    URL_Str = US_URL_Str
-                    timer("Request from HTTP", 100)
+                    # How should the new update be handled?
+                    if(APP_AutoUpdate_Nbr){
 
+                        # Send an HTTP request to the update server.
+                        URL_Str = US_URL_Str
+                        timer("Request from HTTP", 100)
+
+                    }
+
+                    else{
+
+                        # Print a notification to the chat.
+                        print("[NOTICE]: A new version of the User App is available. Enable automatic updates in the Config to download it.")
+
+                    }
                 }
                 break
 
             # Update Server requested HTTP Data.
             case US_URL_Str,
 
-                # Download new code from the update server & start a call to opening up the local file.
+                # Download new code from the update server & start a call to open up the local file.
                 E2Data_Str = Data_Str
                 DIR_Str = App_Directory_Str
                 timer("Load File", 500)
