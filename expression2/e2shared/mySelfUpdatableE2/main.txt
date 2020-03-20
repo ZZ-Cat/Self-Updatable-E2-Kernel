@@ -1,3 +1,25 @@
+#[
+    This is the User App for the Self Updatable E2.
+
+    Self Updatable E2. Copyright (c) 2020. Cassandra "ZZ Cat" Robinson.
+
+    This Expression 2 Script is free software. You can redistribute & modify this Expression 2 Script under the terms of the
+    GNU Affero General Public License, version 3. Or, (at your option) any later version of this license.
+
+    This Expression 2 Script is distributed with the intention that it will be useful.
+    However, it is distributed "as is", & WITHOUT WARRANTY. This includes implied warranties such as merchantability &/or fitness for a particular purpose.
+    Any other warranties that have the potential to be applicable to this Expression 2 Script is hereby disclaimed & excluded.
+    Read the GNU Affero General Public License for further details.
+
+    You should have received a copy of the GNU Affero General Public License with this Expression 2 Script.
+    Otherwise, see this link for details: https://www.gnu.org/licenses/
+
+    You can acquire the source code for this E2, here: https://bit.ly/SelfUpdatableE2_Source
+    Developer contributions & ideas are welcome. Submit your pull requests here: https://bit.ly/SelfUpdatableE2_Contribute
+    Head on over to my Facebook Page & click the "Follow" button: https://bit.ly/ZZCatOnFacebook
+    NB: I don't do friend requests on my Facebook Page. So, don't take offense, if I delete your requests.
+]#
+
 @name mySelfUpdatableE2/main
 @persist App_Config:table
 @autoupdate
@@ -6,7 +28,7 @@ if(first()){
 
     App_Config["App Author", string] = "Your name here"
     App_Config["App Name", string] = "Your project name here"
-    App_Config["App Version", string] = "0.1.0-a0.2.0"
+    App_Config["App Version", string] = "1.0.0"
 
     function void setup(){
 

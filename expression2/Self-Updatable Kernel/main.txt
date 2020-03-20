@@ -1,3 +1,25 @@
+#[
+    The Self Updatable E2 simplifies & automates the updating process of a User App.
+
+    Self Updatable E2. Copyright (c) 2020. Cassandra "ZZ Cat" Robinson.
+
+    This Expression 2 Script is free software. You can redistribute & modify this Expression 2 Script under the terms of the
+    GNU Affero General Public License, version 3. Or, (at your option) any later version of this license.
+
+    This Expression 2 Script is distributed with the intention that it will be useful.
+    However, it is distributed "as is", & WITHOUT WARRANTY. This includes implied warranties such as merchantability &/or fitness for a particular purpose.
+    Any other warranties that have the potential to be applicable to this Expression 2 Script is hereby disclaimed & excluded.
+    Read the GNU Affero General Public License for further details.
+
+    You should have received a copy of the GNU Affero General Public License with this Expression 2 Script.
+    Otherwise, see this link for details: https://www.gnu.org/licenses/
+
+    You can acquire the source code for this E2, here: https://bit.ly/SelfUpdatableE2_Source
+    Developer contributions & ideas are welcome. Submit your pull requests here: https://bit.ly/SelfUpdatableE2_Contribute
+    Head on over to my Facebook Page & click the "Follow" button: https://bit.ly/ZZCatOnFacebook
+    NB: I don't do friend requests on my Facebook Page. So, don't take offense, if I delete your requests.
+]#
+
 @name Self-Updatable Kernel/main
 @model
 @persist [APP_RunOnTick_Nbr]:number [URL_Str DIR_Str E2Data_Str VC_URL_Str US_URL_Str App_Directory_Str]:string
@@ -5,7 +27,7 @@
 @autoupdate
 
 #[ Reset Handler. ]#
-if(dupefinished()){ timer("Reset", 10) }
+if(dupefinished()){ timer("Reset", (realtime() - curtime())) }
 if(clk("Reset")){ reset() }
 
 #[ Initialize the kernel & user's application. ]#
@@ -38,7 +60,6 @@ if(first()){
     AppName_Str += "\nVersion "
     AppName_Str += App_Config["App Version", string]
 
-    print(AppName_Str)
     setName(AppName_Str)
 
     # Set execution triggers.
@@ -185,12 +206,20 @@ if(fileClk(App_Directory_Str)){
     switch(fileStatus()){
 
         case _FILE_OK,
-            print("[NOTICE]: User app successfully uploaded. Automatic update is now in progress...")
+           #print("[NOTICE]: Updating User App...")
             timer("Update User App", 200)
             break
 
+        case _FILE_404,
+            print("[ERROR]: No User App was found.")
+            break
+
+        case _FILE_UNKNOWN,
+            print("[ERROR]: Invalid User App file extension. User App needs to be '*.txt'")
+            break
+
         default,
-            print("[ERROR]: Failed to load user app.")
+            print("[ERROR]: Failed to update User App.")
             break
 
     }
@@ -202,9 +231,9 @@ if(clk("Update User App")){
 
     if(fileCanWrite()){
 
-        fileWrite(App_Directory_Str, E2Data_Str)
-        print("[NOTICE]: User App has been updated. E2 will now restart.")
-        timer("Reset", 5000)
+        fileWrite(DIR_Str, E2Data_Str)
+        print("[NOTICE]: Successfully updated User App. It is now safe to reload the E2.")
+       #timer("Reset", 5000)
 
     }
 
