@@ -30,6 +30,14 @@ if(first()){
     App_Config["App Name", string] = "Your project name here"
     App_Config["App Version", string] = "1.0.0"
 
+    function void defaultE2handler(){
+
+      #[ This function is for those that are more familiar with the Expression 2 environment.
+      You can write all of your expression 2 code here.
+      Be warned: This has not been tested yet. So, use at your own risk. ]#
+
+    }
+
     function void setup(){
 
         #[ Write your application's setup code here. ]#
