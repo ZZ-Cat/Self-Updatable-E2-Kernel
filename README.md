@@ -7,6 +7,7 @@
 
 
 ### Written & Developed by:
+[Cassandra "ZZ Cat" Robinson](https://bit.ly/ZZCatOnFacebook)
 [![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/0)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/0)[![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/1)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/1)[![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/2)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/2)[![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/3)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/3)[![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/4)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/4)[![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/5)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/5)[![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/6)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/6)[![](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/images/7)](https://sourcerer.io/fame/ZZ-Cat/ZZ-Cat/Self-Updatable-E2-Kernel/links/7)
 
 
