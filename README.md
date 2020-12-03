@@ -43,7 +43,7 @@
  * [Advanced Duplicator 2](https://steamcommunity.com/sharedfiles/filedetails/?id=773402917)
 
 ## How to obtain & install:
- 1. Download this repository, by clicking "Download Zip" under "Clone or Download", & save the zip file in an accessible directory.
+ 1. Download this repository, by clicking "Download Zip" under the green "Code" button, & save the zip file in an accessible directory.
  2. Extract everything from the zip file.
  3. **Backup your files before expediting this step.** Copy the 'expression2' folder to this directory -> 'steamapps/common/GarrysMod/garrysmod/data', & overwrite the existing folder(s) & file(s) with the same name(s).
  4. Fire up Garrys Mod & start a new sandbox session.
